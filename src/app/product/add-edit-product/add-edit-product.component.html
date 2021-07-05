@@ -1,0 +1,41 @@
+<div class="card container col-md-6 offset-md-3 mt-5">
+  <div class="card-body">
+    <div class="text-danger" *ngIf="this.error">{{error}}</div>
+
+    <form [formGroup]="form">
+      <!-- Product Name -->
+      <div class="form-group">
+        <label for="name">Product Name:</label>
+        <input placeholder="ex: Realme C21" formControlName="name"
+          [ngClass]="{ 'is-invalid': submitted && f.name.errors }" class="form-control form-control-sm">
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+          <div *ngIf="f.name.errors.required">Product Name is required</div>
+        </div>
+      </div>
+
+      <!-- Price -->
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" class="form-control form-control-sm" formControlName="price"
+          [ngClass]="{ 'is-invalid': submitted && f.price.errors }" placeholder="ex: 19000">
+        <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+          <div *ngIf="f.price.errors.required">What is product price</div>
+        </div>
+      </div>
+      <!-- Description -->
+      <div class="form-group">
+        <label for="message">Description:</label>
+        <textarea class="form-control form-control-sm" formControlName="description"
+          [ngClass]="{ 'is-invalid': submitted && f.description.errors }"
+          placeholder="Write Description of product here…" rows="4"></textarea>
+        <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+          <div *ngIf="f.description.errors.required">Please write product description</div>
+        </div>
+      </div>
+
+      <div class="text-danger" *ngIf="error">{{error}}</div>
+      <!-- Save Button -->
+      <button type="Submit" class="btn btn-primary pt-2 mr-2" (click)="onSubmit()">Save</button>
+    </form>
+  </div>
+</div>
