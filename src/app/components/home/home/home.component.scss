@@ -1,0 +1,102 @@
+slide:hover {
+  transform: scale(1.03);
+}
+
+.card {
+  height: 400px;
+}
+
+
+
+.width {
+  width: 250px;
+}
+
+.image-detail img {
+  // background-image: linear-gradient(to top,rgba(4, 4, 4, 0.65),rgba(54, 54, 54, 0.2)) !important;
+  filter: brightness(80%);
+}
+
+button {
+  color: black;
+  background-color: white;
+  transform: scale(1.03);
+}
+button:hover {
+  background: transparent;
+  color: white;
+  outline: white;
+  outline-color: white;
+  transform: scale(1.03);
+}
+
+.crousel-slide {
+  position: relative;
+  h4 {
+    position: absolute;
+    bottom: 15%;
+    left: 3%;
+    color: white;
+  }
+  button {
+    position: absolute;
+    bottom: 10%;
+    left: 3%;
+  }
+}
+
+.transmition-s {
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  transition: background-color 1s linear;
+}
+.active {
+  color: #333 !important;
+  border-bottom-color: #333 !important;
+  background-color: #efefef !important;
+}
+.nav-pills.nav-big .nav-link {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  color: black;
+  font-weight: 300;
+  font-size: 2.4rem;
+  letter-spacing: -0.025em;
+  text-transform: capitalize;
+}
+
+.product {
+  color: black;
+  text-align: center;
+}
+
+owl-carousel-o {
+  margin-left: 10px;
+}
+
+.nav-link {
+.active{
+  background-color: #efefef !important;
+}
+}
+
+.inactive {
+  all: revert
+}
+
+.elementToFadeInAndOut {
+  background: rgb(143, 141, 141);
+  -webkit-animation: fadeinout 4s linear forwards;
+  animation: fadeinout 4s linear forwards;
+  background-color: #efefef;
+  color: black;
+}
+
+@-webkit-keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}

@@ -1,0 +1,311 @@
+<!-- <nav class="navbar transparent sticky-top navbar-expand-lg navbar-dark" [ngClass]="{'bg-secondary text-light':moved}">
+  <a class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </a>
+  <a class="navbar-brand" [routerLink]="['']">E-commerce</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse mx-3" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['']">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['add-article']">Add Article</a>
+      </li>
+    </ul>
+  </div>
+</nav> -->
+
+<!------- Header -------------------->
+<header class="header header-9" [ngClass]="{'moved':moved}">
+  <div class="header-middle sticky-header">
+    <div class="container">
+      <div class="header-left">
+
+        <nav class="main-nav">
+          <ul class="menu sf-arrows">
+
+            <!-- <li class="megamenu-container active">
+              <a href="index.html" class="sf-with-ul">Home</a> -->
+
+            <!----- on hover home list-->
+            <!-- <div class="megamenu demo">
+                <div class="menu-col">
+                  <div class="menu-title">Choose your demo</div>End .menu-title -->
+
+            <!-- <div class="demo-list">
+                    <div class="demo-item">
+                      <a href="index-1.html">
+                        <span class="demo-bg" style="background-image: url(assets/images/menu/demos/1.jpg);"></span>
+                        <span class="demo-title">01 - Home</span>
+                      </a>
+                    </div>
+                  </div>End .demo-list -->
+
+            <!-- <div class="megamenu-action text-center">
+                    <a href="#" class="btn btn-outline-primary-2 view-all-demos"><span>View
+                        All Demos</span><i class="icon-long-arrow-right"></i></a>
+                  </div> -->
+            <!-- End .text-center -->
+            <!-- </div> -->
+            <!-- End .menu-col -->
+            <!-- </div> -->
+            <!-- End .megamenu -->
+            <!-- </li> -->
+
+            <li>
+              <a class="sf-with-ul">Shop</a>
+              <!----- on hover shope list-->
+              <div class="megamenu megamenu-md">
+                <div class="row no-gutters">
+                  <div class="col-md-8">
+                    <div class="menu-col">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="menu-title">Shop with sidebar</div>
+                          <!-- End .menu-title -->
+                          <ul>
+                            <li><a>Shop List</a></li>
+                            <li><a>Shop Grid 2
+                                Columns</a></li>
+                            <li><a>Shop Grid 3 Columns</a></li>
+                            <li><a>Shop Grid 4
+                                Columns</a></li>
+                            <li><a><span>Shop
+                                  Market<span class="tip tip-new">New</span></span></a>
+                            </li>
+                          </ul>
+
+                          <div class="menu-title">Shop no sidebar</div>
+                          <!-- End .menu-title -->
+                          <ul>
+                            <li><a><span>Shop Boxed No
+                                  Sidebar<span class="tip tip-hot">Hot</span></span></a>
+                            </li>
+                            <li><a>Shop Fullwidth No
+                                Sidebar</a></li>
+                          </ul>
+                        </div><!-- End .col-md-6 -->
+
+                        <div class="col-md-6">
+                          <div class="menu-title">Product Category</div>
+                          <!-- End .menu-title -->
+                          <ul>
+                            <li><a>Product
+                                Category Boxed</a></li>
+                            <li><a><span>Product
+                                  Category Fullwidth<span class="tip tip-new">New</span></span></a>
+                            </li>
+                          </ul>
+                          <div class="menu-title">Shop Pages</div>
+                          <!-- End .menu-title -->
+                          <ul>
+                            <li><a>Cart</a></li>
+                            <li><a>Checkout</a></li>
+                            <li><a>Wishlist</a></li>
+                            <li><a>My Account</a></li>
+                            <li><a>Lookbook</a></li>
+                          </ul>
+                        </div><!-- End .col-md-6 -->
+                      </div><!-- End .row -->
+                    </div><!-- End .menu-col -->
+                  </div><!-- End .col-md-8 -->
+                </div><!-- End .row -->
+              </div><!-- End .megamenu megamenu-md -->
+            </li>
+
+            <li>
+              <a class="sf-with-ul">Product</a>
+              <!----- on hover product list-->
+
+              <div class="megamenu megamenu-sm">
+                <div class="row no-gutters">
+                  <div class="col-md-6">
+                    <div class="menu-col">
+                      <div class="menu-title">Product Details</div>
+                      <!-- End .menu-title -->
+                      <ul>
+                        <li><a>Default</a></li>
+                        <li><a>Centered</a></li>
+                        <li><a><span>Extended Info<span class="tip tip-new">New</span></span></a></li>
+                        <li><a>Gallery</a></li>
+                        <li><a>Sticky Info</a></li>
+                        <li><a>Boxed With Sidebar</a></li>
+                        <li><a>Full Width</a></li>
+                        <li><a>Masonry Sticky Info</a></li>
+                      </ul>
+                    </div><!-- End .menu-col -->
+                  </div><!-- End .col-md-6 -->
+
+                  <div class="col-md-6">
+                    <div class="banner banner-overlay">
+                      <a>
+
+                        <div class="banner-content banner-content-bottom">
+                          <div class="banner-title text-white">New
+                            Trends<br><span><strong>spring 2019</strong></span>
+                          </div><!-- End .banner-title -->
+                        </div><!-- End .banner-content -->
+                      </a>
+                    </div><!-- End .banner -->
+                  </div><!-- End .col-md-6 -->
+                </div><!-- End .row -->
+              </div><!-- End .megamenu megamenu-sm -->
+            </li>
+            <!-- <li>
+              <a href="#" class="sf-with-ul">Pages</a> -->
+            <!-- --- on hover page list ---- -->
+            <!-- <ul>
+                <li>
+                  <a href="about.html" class="sf-with-ul">About</a>
+
+                  <ul>
+                    <li><a href="about.html">About 01</a></li>
+                    <li><a href="about-2.html">About 02</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="contact.html" class="sf-with-ul">Contact</a>
+
+                  <ul>
+                    <li><a href="contact.html">Contact 01</a></li>
+                    <li><a href="contact-2.html">Contact 02</a></li>
+                  </ul>
+                </li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+                <li><a href="404.html">Error 404</a></li>
+                <li><a href="coming-soon.html">Coming Soon</a></li>
+              </ul>
+            </li> -->
+
+            <li>
+              <a class="sf-with-ul">Blog</a>
+              <!------ on hover blog list-->
+              <ul>
+                <li><a>Classic</a></li>
+                <li><a>Listing</a></li>
+                <li>
+                  <a href="#">Grid</a>
+                  <ul>
+                    <li><a>Grid 2 columns</a></li>
+                    <li><a>Grid 3 columns</a></li>
+                    <li><a>Grid 4 columns</a></li>
+                    <li><a>Grid sidebar</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a>Masonry</a>
+                  <ul>
+                    <li><a>Masonry 2 columns</a></li>
+                    <li><a>Masonry 3 columns</a></li>
+                    <li><a>Masonry 4 columns</a></li>
+                    <li><a>Masonry sidebar</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a>Mask</a>
+                  <ul>
+                    <li><a>Blog mask grid</a></li>
+                    <li><a>Blog mask masonry</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a>Single Post</a>
+                  <ul>
+                    <li><a>Default with sidebar</a></li>
+                    <li><a>Fullwidth no sidebar</a></li>
+                    <li><a>Fullwidth with sidebar</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a class="sf-with-ul">Elements</a>
+              <!------- on hover Element ----->
+              <ul>
+                <li><a>Products</a></li>
+                <li><a>Typography</a></li>
+                <li><a>Titles</a></li>
+                <li><a>Banners</a></li>
+                <li><a>Product Category</a></li>
+                <li><a>Video Banners</a></li>
+                <li><a>Buttons</a></li>
+                <li><a>Accordions</a></li>
+                <li><a>Tabs</a></li>
+                <li><a>Testimonials</a></li>
+                <li><a>Blog Posts</a></li>
+                <li><a>Portfolio</a></li>
+                <li><a>Call to Action</a></li>
+                <li><a>Icon Boxes</a></li>
+              </ul>
+            </li>
+            <!-- <li>
+              <a class="sf-with-ul" (click)="getCurrentUser()">getCurrentUser</a>
+            </li> -->
+          </ul><!-- End .menu -->
+        </nav><!-- End .main-nav -->
+
+
+      </div><!-- End .header-left -->
+      <div class="text-center">
+        <a [routerLink]="['']" class="logo">
+          <img src="../../assets/Logo-black-2x_130x.png" alt="Prestige" width="100" height="30">
+        </a>
+      </div>
+
+      <div class="header-right">
+        <ul class="menu sf-arrows">
+          <li *ngIf="currentUser!== null && currentUser?.isAdmin">
+            <a class="sf-with-ul" [routerLink]="['admin','article-list','true']">Go to List</a>
+          </li>
+          <li>
+            <a class="sf-with-ul" *ngIf="currentUser">{{currentUser?.email}}</a>
+            <a class="sf-with-ul" *ngIf="!currentUser">Login</a>
+            <!------- on hover Element ----->
+            <ul *ngIf="!currentUser">
+              <li><a [routerLink]="['/admin','login']">Login as Admin</a></li>
+              <li><a [routerLink]="['/login']">Login as User</a></li>
+            </ul>
+            <ul *ngIf="currentUser">
+              <li><a (click)="logMethode()">Logout</a></li>
+            </ul>
+        </ul>
+
+      </div><!-- End .header-right -->
+    </div><!-- End .container -->
+  </div><!-- End .header-middle -->
+</header>
+<!-- End .header -->
+
+<!--------------- Header ---------->
+<!-- side bar -->
+<div class="">
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="row text-center" data-bs-dismiss="offcanvas" [routerLink]="['article-list']">
+        <button class="btn btn-light">
+          View Item</button>
+      </div>
+      <div class="row text-center mt-2" data-bs-dismiss="offcanvas">
+        <button class="btn btn-light" [routerLink]="['article-list',true]">
+          Edit Item</button>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- side bar end-->
+<!---https://www.awesomescreenshot.com/video/6678489
+--->

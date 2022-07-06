@@ -1,0 +1,65 @@
+<form [formGroup]="articleForm" class="row">
+  <div *ngFor="let c of form" class="form-group mb-2 col-6">
+    <label class="col-md-12 mb-2 mr-1" (click)="printValue(c.key)">{{c.option.label}} </label>
+    <div [ngSwitch]="c.type">
+      <div *ngSwitchCase="'date'">
+        <input type="date" class="form-control" [formControlName]="c.key" [placeholder]="c.option?.placeholder"
+          [ngClass]="{ 'is-invalid': isSubmitted && articleForm['controls'][c.key].errors}">
+        <div class="invalid-feedback" *ngIf="articleForm['controls'][c.key].errors?.required">
+          {{c.option.label}} is required</div>
+      </div>
+      <div *ngSwitchCase="'textarea'">
+        <textarea type="text" class="form-control" rows="4" [formControlName]="c.key"
+          [placeholder]="c.option?.placeholder"
+          [ngClass]="{ 'is-invalid': isSubmitted && articleForm['controls'][c.key].errors}"></textarea>
+        <div class="invalid-feedback" *ngIf="articleForm['controls'][c.key].errors?.required">
+          {{c.option.label}} is required</div>
+      </div>
+      <div *ngSwitchCase="'input'">
+        <input class="form-control" [type]="c.option.type ? c.option.type : text" [formControlName]="c.key"
+          [placeholder]="c.option?.placeholder"
+          [ngClass]="{ 'is-invalid': isSubmitted && articleForm['controls'][c.key].errors}">
+        <div class="invalid-feedback" *ngIf="articleForm['controls'][c.key].errors?.required">
+          {{c.option.label}} is required</div>
+        <div class="invalid-feedback" *ngIf="articleForm['controls'][c.key].errors?.pattern">
+          {{c.option.label}} is valid</div>
+      </div>
+      <div *ngSwitchCase="'image'" class="text-center">
+        <label for="{{c.key}}" type="file" name="image" class="mt-2 border"
+          [ngClass]="{ 'is-invalid broder-danger': isSubmitted && articleForm['controls'][c.key].errors}">
+          <img height="200px" width="320px" accept="image/png, image/jpeg" class="product-upload"
+            src="{{ (articleForm['controls'][c.key].value == undefined || articleForm['controls'][c.key] === null) ? c.option.img : articleForm['controls'][c.key].value }}">
+        </label>
+        <span class="pull-right"
+          *ngIf="articleForm['controls'][c.key].value !== undefined && articleForm['controls'][c.key].value !== null && processType !=='View Item' ">
+          <small> <button type="button" class="btn-secondary btn-sm" (click)="clearImage(c.key)">
+              remove</button></small>
+        </span>
+        <input type="file" *ngIf="processType !=='View Item'" type="file" accept="image/png, image/jpeg" [id]="c.key"
+          (change)="handleFileInput($event,c.key)" style="display: none;">
+        <div class="invalid-feedback" *ngIf="articleForm['controls'][c.key].errors?.required">
+          {{c.option.label}} is required</div>
+        <div class="text-danger" *ngIf="error">
+          {{c.option.label}} {{error}}</div>
+      </div>
+      <div *ngSwitchCase="'dropdown'">
+        <select class="form-control" [formControlName]="c.key"
+          [ngClass]="{ 'is-invalid': isSubmitted && articleForm['controls'][c.key].errors}">
+          <option disabled>{{c.option?.placeholder}}</option>
+          <option *ngFor="let x of c?.option?.list" [value]="x">
+            <h6>{{x}}</h6>
+          </option>
+        </select>
+        <div class="invalid-feedback" *ngIf="articleForm['controls'][c.key].errors?.required">
+          {{c.option.label}} is required</div>
+      </div>
+    </div>
+  </div>
+</form>
+<div class="m-4">
+  <button class="btn btn-primary mx-1" (click)="submit()"> Submit</button>
+  <button class="btn btn-secondary mx-1" (click)="cancel()"> Cancel
+  </button>
+  <button class="btn btn-danger mx-1" (click)="delete()"> Delete
+  </button>
+</div>

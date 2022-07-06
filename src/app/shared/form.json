@@ -1,0 +1,70 @@
+[
+  {
+    "key": "Image",
+    "type": "image",
+    "option": {
+      "label": "First Product Image",
+      "img": "../../../assets/product-img.png",
+      "required": true
+    }
+  },
+  {
+    "key": "Image2",
+    "type": "image",
+    "option": {
+      "label": "Second Product Image",
+      "img": "../../../assets/product-img.png",
+      "required": true
+    }
+  },
+  {
+    "key": "name",
+    "type": "input",
+    "option": {
+      "label": "Product Name",
+      "placeholder": "Enter product Name",
+      "required": true,
+      "type": "text"
+    }
+  },
+  {
+    "key": "category",
+    "type": "dropdown",
+    "option": {
+      "label": "Product Category",
+      "placeholder": "ex. Books,Paint,Shoes..",
+      "required": true,
+      "list": ["Books", "Paint", "Shoes", "Shirt", "Pant","Bag"]
+    }
+  },
+  {
+    "key": "price",
+    "type": "input",
+    "option": {
+      "label": "Price",
+      "placeholder": "Enter Price",
+      "required": true,
+      "type": "number"
+    }
+  },
+  {
+    "key": "type",
+    "type": "dropdown",
+    "option": {
+      "label": "Product Type",
+      "placeholder": "choose product type... ",
+      "required": true,
+      "list": ["A", "B", "C"]
+    }
+  },
+  {
+    "key": "description",
+    "type": "textarea",
+    "option": {
+      "label": "Product Description",
+      "placeholder": "Enter product description..",
+      "required": true,
+      "type": "text"
+    }
+  }
+]

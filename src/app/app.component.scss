@@ -1,0 +1,12 @@
+app-navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 99999;
+  transition: all 0.3s ease-in-out;
+}
+
+.bg-clr {
+  background-color: #efefef;
+  height: 100%;
+  min-height: 625px;
+}

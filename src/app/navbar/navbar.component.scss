@@ -1,0 +1,22 @@
+// .transparent {
+//   background: transparent;
+//   transform: scale(1.03);
+//   overflow: hidden;
+// }
+
+.moved {
+  background-color: white;
+  color: black;
+  padding: 5px;
+}
+
+header.header.header-9:hover {
+  background: white;
+  color: black !important;
+}
+
+.header.header-9 .menu li:hover > a,
+.header.header-9 .menu li.show > a,
+.header.header-9 .menu li.active > a {
+  color: black ;
+}

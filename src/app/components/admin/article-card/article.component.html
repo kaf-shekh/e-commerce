@@ -1,0 +1,31 @@
+<div class="card card-border text-dark">
+  <div class="card-header text-center align-self-center">
+    <img class="img-thumbnail rounded transform" src="{{article?.Image}}" (click)="openModal(edit,article,false)">
+    <div class="icon" (click)="openModal(edit,article,true)">
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div class="card-body align-self-center" (click)="openModal(edit,article,false)" [style.color]="color">
+    <div class="row">
+      <span class="col">{{article?.name.length > 25 ? article?.name.substring(0,25)+".." : article?.name}}</span>
+    </div>
+
+    <div class="row">
+      <span class="col"><small>Price</small> ₹{{article?.price}}</span>
+    </div>
+
+  </div>
+</div>
+<ng-template #edit>
+  <div class="modal-body">
+    <button type="button" class="btn-close btn-sm close pull-right" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+    <span *ngIf="isEdit">
+      <app-edit-article [article]="article" (close)="closeModal()"></app-edit-article>
+    </span>
+    <span *ngIf="!isEdit">
+      <app-article-detail [article]="article" (close)="closeModal()"></app-article-detail>
+    </span>
+  </div>
+</ng-template>

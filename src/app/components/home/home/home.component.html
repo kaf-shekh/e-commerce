@@ -1,0 +1,131 @@
+<div class="loader" *ngIf="loading">
+  <div id="preloader"></div>
+</div>
+
+<!-- <button class="btn btn-danger" (click)="getData()">Get Data</button>
+<button class="btn btn-danger" (click)="checkValue()">checkValue Data</button> -->
+<div *ngIf="!loading">
+  <div class="crousel-slide image-detail" *ngIf="articles.length !== 0">
+
+    <owl-carousel-o [options]="customOptions">
+      <ng-container *ngFor="let slide of articles">
+        <ng-template carouselSlide>
+          <div id="{{slide.name+i}}">
+            <img [src]="slide.Image" alt="image slide" style="width:100%;height: 500px; border-radius: 4px;">
+            <div class="">
+              <h4> {{ slide?.name}}</h4>
+              <button class="btn btn-outline-light" (click)="openModal(template,slide)">Buy</button>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+
+    </owl-carousel-o>
+    <br />
+  </div>
+
+  <!-- <div class="text-center">
+    OUR BEST SELLERS </div> -->
+  <!-- <div>
+    <ul class="nav nav-pills nav-border-anim nav-big justify-content-center mb-3" role="tablist">
+      <li class="nav-item" *ngFor="let title of of titles">
+        <a class="nav-link active" [id]="title" data-toggle="tab" [href]="title"
+          role="tab" [aria-controls]="title" aria-selected="true">{{title}}</a>
+      </li>
+    </ul>
+
+  </div> -->
+  <div class="heading heading-center mb-3" data-aos="fade-up" data-aos-once="false" *ngIf="titles.length !== 0">
+    <h2 class="title">FEATURED PRODUCTS</h2><!-- End .title -->
+
+    <ul class="nav nav-pills justify-content-center" role="tablist">
+      <span *ngFor="let title of titles;let i=index">
+        <li class="nav-item">
+          <a class="nav-link" (click)="selectTab(i)" [id]="title.name" data-toggle="tab" [href]="'#'+title.name"
+            role="tab" [attr.aria-controls]="title.name" [ngClass]="{'active': title.selected}"
+            [attr.aria-selected]="title.selected">{{title.name}}</a>
+        </li>
+      </span>
+
+    </ul>
+  </div>
+  <div data-aos="fade-up" data-aos-once="false" [ngClass]="{'aos-animate':clicked}">
+    <owl-carousel-o [options]='Options'>
+      <ng-container *ngFor="let slide of categoryList[index]">
+        <ng-template carouselSlide>
+          <div class="product product-4" [id]="slide.name">
+            <figure class="product-media">
+              <a>
+                <img [src]="slide.Image" alt="Product image" class="product-image"
+                  style="width:100%;height: 300px; border-radius: 4px;">
+                <img [src]="slide?.Image2 || slide.Image" alt="Product image" class="product-image-hover"
+                  style="width:100%;height: 300px; border-radius: 4px;">
+              </a>
+
+              <div class="product-action">
+                <a class="btn-product" (click)="openModal(template,slide)"><span>Show more Details</span></a>
+              </div><!-- End .product-action -->
+            </figure><!-- End .product-media -->
+
+            <div class="product-body text-center text-dark">
+              <h3 class="product-title">{{slide.name.length > 25 ? slide?.name.substring(0,25)+".." : slide?.name}}
+              </h3>
+              <!-- End .product-title -->
+              <h3 class="">
+                ₹{{slide.price}}
+              </h3><!-- End .product-price -->
+            </div><!-- End .product-body -->
+          </div><!-- End .product -->
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+  <span *ngIf="titles.length !== 0">
+    <div class="row text-center" *ngFor="let title of titles;let i=index">
+      <div class="container">
+        <div class="mt-2 crousel-slide" data-aos="fade-up" data-aos="fade-down" data-aos-once="false">
+          <div class="mb-4">
+            <h1>{{title.name}}</h1>
+          </div>
+          <owl-carousel-o [options]='Options'>
+            <ng-container *ngFor="let slide of categoryList[i+1]">
+              <ng-template carouselSlide>
+                <div class="product product-4" [id]="slide.name">
+                  <figure class="product-media">
+                    <a>
+                      <img [src]="slide.Image" alt="Product image" class="product-image"
+                        style="width:100%;height: 300px; border-radius: 4px;">
+                      <img [src]="slide?.Image2 || slide.Image" alt="Product image" class="product-image-hover"
+                        style="width:100%;height: 300px; border-radius: 4px;">
+                    </a>
+
+                    <div class="product-action">
+                      <a class="btn-product" (click)="openModal(template,slide)"><span>Show more Details</span></a>
+                    </div><!-- End .product-action -->
+                  </figure><!-- End .product-media -->
+
+                  <div class="product-body text-center text-dark">
+                    <h3 class="product-title">{{slide.name.length > 25 ? slide?.name.substring(0,25)+".." :
+                      slide?.name}}
+                    </h3>
+                    <!-- End .product-title -->
+                    <h3 class="">
+                      ₹{{slide.price}}
+                    </h3><!-- End .product-price -->
+                  </div><!-- End .product-body -->
+                </div><!-- End .product -->
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
+        </div>
+      </div>
+    </div>
+  </span>
+</div>
+
+<!---- pop up modal --->
+<ng-template #template>
+  <div class="modal-body">
+    <app-article-detail [article]="article" (close)="closeModal()"></app-article-detail>
+  </div>
+</ng-template>

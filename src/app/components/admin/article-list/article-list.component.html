@@ -1,0 +1,29 @@
+<div class="loader" *ngIf="loading">
+  <div id="preloader"></div>
+</div>
+<div class="row sidebar-mt " *ngIf="!loading">
+  <div class="col-md-2 container ">
+    <div class="card sidenav align-items-center border-light">
+      <span class="custom-badge" (click)="openModal(add)">Add Article</span>
+    </div>
+  </div>
+  <div class="col-md-10 container">
+    <div class="row ">
+      <div class="col-md-4 col-lg-3 pb-30 pb-sm-15 pb-2" *ngFor="let value of list">
+        <app-article [article]="value" [editMode]="editMode"></app-article>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!---- pop up modal --->
+
+
+<ng-template #add>
+  <div class="modal-body">
+    <button type="button" class="btn-close btn-sm close pull-right" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+    <app-add-article (close)="closeModal()"></app-add-article>
+  </div>
+</ng-template>

@@ -1,0 +1,48 @@
+<div class="sidebar-mt">
+  <section class="container">
+    <div class="card offset-md-3 col-md-6">
+      <div class="card-body" *ngIf="!currentUser">
+        <h4 class="mb-3 border-bottom pb-2">Sign Up</h4>
+        <form [formGroup]="form" class="ignore-form-invalid-feedback" autocomplete="off">
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input placeholder="ex: your-email@address.com" formControlName="email" autocomplete="off"
+              [ngClass]="{ 'is-invalid': submitted && form.controls.email.errors }"
+              class="form-control form-control-sm">
+            <div *ngIf="submitted && form.controls.email.errors" class="invalid-feedback">
+              <div *ngIf="form.controls.email.errors.required">Email Address is required.</div>
+              <div *ngIf="form.controls.email.errors.email">Enter a valid email address.</div>
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" autocomplete="off"
+              [ngClass]="{ 'is-invalid': submitted && form.controls.password.errors }"
+              class="form-control form-control-sm">
+            <div *ngIf="submitted && form.controls.password.errors" class="invalid-feedback">
+              <div *ngIf="form.controls.password.errors.required">Password is required.</div>
+            </div>
+          </div>
+
+          <!-- signup Button -->
+          <button (click)="signup()" class="btn btn-secondary">Sign Up</button>
+          <span class="float-right text-primary" [routerLink]="['/login']">Go to Login
+          </span>
+        </form>
+      </div>
+
+      <div class="card-body" *ngIf="currentUser!== null && currentUser?.emailVerified === false">
+        <div class="text-center">Please Verify Your Email, link has been sent to your email.</div>
+        <div class="text-center">if You already verified please <a class="text-primary" (click)="reLogin()">
+            relogin </a></div>
+        <div class="text-primary" (click)="resend()" [ngClass]="{'disable':!timeOver}">Resend</div>
+        <span class="float-right text-primary" [routerLink]="['/login']">Go to Login
+        </span>
+      </div>
+    </div>
+  </section>
+
+</div>

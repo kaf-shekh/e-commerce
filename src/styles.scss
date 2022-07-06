@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  display: none;
+}
+
+.carousel-indicators {
+  display: none;
+}
+
+.content {
+  overflow: hidden;
+}
+
+modal-container {
+  z-index: 99999 !important;
+}
+
+.fontClass {
+  font-family: sans-serif;
+  font: Montserrat;
+}
+
+.sidebar-mt {
+  margin-top: 112px !important;
+}
+
+.disable {
+  pointer-events: none;
+  opacity: 0.5;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+div#preloader {
+  position: absolute;
+  left: 0;
+  top: 30;
+  z-index: 99999;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: url("./assets/Spinner-1s-200px.gif") no-repeat center
+    center;
+}
+
+.loader {
+  background-color: #212529;
+  height: 600px;
+}

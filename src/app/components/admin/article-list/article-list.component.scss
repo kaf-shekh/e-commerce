@@ -1,0 +1,33 @@
+/* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 16.3%;
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 17%;
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  background-color: #212529;
+  transform: scale(1.03);
+}
+
+.custom-badge {
+  background: #6c757d;
+  padding: 7px 12px;
+  width: auto;
+  color: white;
+  border-radius: 1rem;
+  position: absolute;
+  top: 5%;
+}
+
+// ng-template {
+//   position: fixed;
+//   width: 100%;
+//   z-index: 99999;
+//   margin: 0px 25px;
+// }
+
+.modal-body {
+  margin-top: 2rem;
+}
